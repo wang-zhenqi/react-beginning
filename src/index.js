@@ -90,11 +90,15 @@ const title = (
  * 1. 函数首字母要大写
  * 2. 函数一定要有返回值，返回一个JSX结构，如果返回值为null则不渲染
  */
-function Hello() {
+
+/*function Hello() {
     return (
         <div>这是我的第一个组件！</div>
     )
-}
+}*/
+const Hello = () => <div>这是用箭头函数生成的组件</div>
+
+
 
 ReactDOM.render(title, document.getElementById('root'))
 //在渲染函数声明的组件时，只需将元素写成函数名标签
