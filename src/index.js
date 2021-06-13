@@ -4,6 +4,7 @@
  */
 import React from 'react'
 import ReactDOM from 'react-dom'
+import Hello from "./Hello";
 
 /*
  * 导入css文件，设置样式
@@ -96,7 +97,7 @@ const title = (
         <div>这是我的第一个组件！</div>
     )
 }*/
-const Hello = () => <div>这是用箭头函数生成的组件</div>
+const FunctionComponent = () => <div>这是用箭头函数生成的组件</div>
 
 /*
  * 通过类的方式添加组件
@@ -127,5 +128,6 @@ class Today extends React.Component {
 
 ReactDOM.render(title, document.getElementById('root'))
 //在渲染函数声明的组件时，只需将元素写成函数名标签
-ReactDOM.render(<Hello/>, document.getElementById('d1'))
-ReactDOM.render(<Today/>, document.getElementById('d2'))
+ReactDOM.render(<FunctionComponent/>, document.getElementById('function-component'))
+ReactDOM.render(<Today/>, document.getElementById('today-component'))
+ReactDOM.render(<Hello/>, document.getElementById('seperated-js-component'))
