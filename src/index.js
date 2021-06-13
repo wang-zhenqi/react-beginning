@@ -98,8 +98,34 @@ const title = (
 }*/
 const Hello = () => <div>这是用箭头函数生成的组件</div>
 
+/*
+ * 通过类的方式添加组件
+ * 1. 类名称首字母要大写
+ * 2. 类组件应该继承React.Component父类，从而可以使用父类中提供的方法或属性
+ * 3. 类组件必须提供render()方法
+ * 4. render()方法必须有返回值
+ */
+function timeConverter(UNIX_timestamp) {
+    let a = new Date(UNIX_timestamp);
+    let months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+    let year = a.getFullYear();
+    let month = months[a.getMonth()];
+    let date = a.getDate();
+    let hour = a.getHours();
+    let min = a.getMinutes();
+    let sec = a.getSeconds();
+    return date + ' ' + month + ' ' + year + ' ' + hour + ':' + min + ':' + sec;
+}
 
+class Today extends React.Component {
+    render() {
+        return (
+            <p>今天是{timeConverter(timestamp)}</p>
+        )
+    }
+}
 
 ReactDOM.render(title, document.getElementById('root'))
 //在渲染函数声明的组件时，只需将元素写成函数名标签
-ReactDOM.render(<Hello />, document.getElementById('d1'))
+ReactDOM.render(<Hello/>, document.getElementById('d1'))
+ReactDOM.render(<Today/>, document.getElementById('d2'))
