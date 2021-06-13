@@ -7,6 +7,7 @@ import ReactDOM from 'react-dom'
 import Hello from "./Hello";
 import EventBinding from "./Event";
 import {FunctionButton} from "./Event";
+import StateShow from "./State";
 
 /*
  * 导入css文件，设置样式
@@ -140,3 +141,4 @@ ReactDOM.render(
     </div>,
     document.getElementById('click-button')
 )
+ReactDOM.render(<StateShow/>, document.getElementById("state-show"))
