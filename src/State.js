@@ -23,7 +23,20 @@ class StateShow extends React.Component {
         count: 0
     }
 
-    Add = () => {
+    /*
+    如果点击事件绑定此函数，则在执行时会报错。
+    原因是函数中的this并非指向component，而是undefined
+     */
+    AddButWillFail() {
+        this.setState({
+            count: this.state.count + 1
+        })
+    }
+
+    /*
+    箭头函数没有this，this就会指向函数的外层结构，即class
+     */
+    AddWithArrowFunction = () => {
         /*
         不要直接修改state中的值，这是错误的，要通过setState来修改！
          */
@@ -47,7 +60,7 @@ class StateShow extends React.Component {
             <div>
                 {/*获取状态时，只需this.state.para即可*/}
                 <h3>Counter: {this.state.count}</h3>
-                <button onClick={this.Add}>+1</button>
+                <button onClick={this.AddWithArrowFunction}>+1</button>
             </div>
         )
     }
