@@ -5,6 +5,8 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import Hello from "./Hello";
+import EventBinding from "./Event";
+import {FunctionButton} from "./Event";
 
 /*
  * 导入css文件，设置样式
@@ -131,3 +133,10 @@ ReactDOM.render(title, document.getElementById('root'))
 ReactDOM.render(<FunctionComponent/>, document.getElementById('function-component'))
 ReactDOM.render(<Today/>, document.getElementById('today-component'))
 ReactDOM.render(<Hello/>, document.getElementById('seperated-js-component'))
+ReactDOM.render(
+    <div>
+        <EventBinding/>
+        <FunctionButton/>
+    </div>,
+    document.getElementById('click-button')
+)
