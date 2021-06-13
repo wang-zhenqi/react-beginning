@@ -24,13 +24,28 @@ class StateShow extends React.Component {
     }
 
     Add = () => {
-        this.state.count++;
+        /*
+        不要直接修改state中的值，这是错误的，要通过setState来修改！
+         */
+        //this.state.count++;
+
+        /*
+        setState()的作用是：
+            1. 更新state
+            2. 更新UI
+        这是通过数据驱动视图的思想
+        setState()的参数是js对象，因此要用{}括起来
+        只列出需要更新的state项即可
+         */
+        this.setState({
+            count: this.state.count + 1
+        })
     }
 
     render() {
         return (
             <div>
-                //获取状态时，只需this.state.para即可
+                {/*获取状态时，只需this.state.para即可*/}
                 <h3>Counter: {this.state.count}</h3>
                 <button onClick={this.Add}>+1</button>
             </div>
